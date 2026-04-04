@@ -3,6 +3,48 @@
   --text:#e5e7eb;--muted:#9ca3af;--accent:#2563eb;--accent-soft:rgba(37,99,235,.22);
   --green:#22c55e;--orange:#f59e0b;--red:#ef4444;
 }
+
+.active-home-filter{
+  background: rgba(37,99,235,.22) !important;
+  border-color: #3b82f6 !important;
+}
+.home-top-grid{
+  display:grid;
+  grid-template-columns:1.35fr 1fr;
+  gap:16px;
+  margin-top:16px;
+  align-items:stretch;
+}
+
+.chart-card{
+  display:flex;
+  flex-direction:column;
+}
+
+.chart-wrap{
+  position:relative;
+  height:320px;
+  width:100%;
+}
+
+.chart-empty{
+  margin-top:12px;
+}
+
+.home-detail-list{
+  max-height:420px;
+}
+
+.active-home-filter{
+  background: rgba(37,99,235,.22) !important;
+  border-color: #3b82f6 !important;
+}
+
+@media (max-width: 900px){
+  .home-top-grid{
+    grid-template-columns:1fr;
+  }
+}
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
 .app{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
