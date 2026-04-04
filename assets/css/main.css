@@ -1,0 +1,57 @@
+:root{
+  --bg:#0b1220;--sidebar:#0f172a;--panel:#111827;--panel-2:#020617;--line:#243041;
+  --text:#e5e7eb;--muted:#9ca3af;--accent:#2563eb;--accent-soft:rgba(37,99,235,.22);
+  --green:#22c55e;--orange:#f59e0b;--red:#ef4444;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+.app{display:grid;grid-template-columns:260px 1fr;min-height:100vh}
+.sidebar{background:var(--sidebar);border-right:1px solid var(--line);padding:20px}
+.sidebar-top h2{margin:0 0 20px}
+.menu{display:flex;flex-direction:column;gap:10px}
+.menu-btn{width:100%;text-align:left;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:#111827;color:var(--text);cursor:pointer;font-weight:700}
+.menu-btn.active{background:var(--accent-soft);border-color:#3b82f6}
+.main{display:flex;flex-direction:column;min-width:0}
+.topbar{padding:20px;border-bottom:1px solid var(--line);background:rgba(2,6,23,.35)}
+.name-box{max-width:320px}
+.name-box label{display:block;margin-bottom:8px;color:var(--muted);font-size:14px}
+.name-box input,.text-input{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--line);background:var(--panel-2);color:var(--text);outline:none}
+.content{padding:20px}
+.module-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+.module-card h1,.module-card h2,.module-card h3,.module-card h4{margin-top:0}
+.muted{color:var(--muted)}
+.name-preview{display:inline-block;padding:6px 10px;background:#1f2937;border-radius:999px;margin-top:8px}
+.home-grid,.pontozo-grid,.lefoglalo-grid,.two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+.stat-card{background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:16px;padding:16px;min-height:170px}
+.stat-title{font-size:14px;color:var(--muted);margin-bottom:10px}
+.stat-main{font-size:34px;font-weight:800}
+.stat-sub{margin-top:10px;color:var(--muted);font-size:14px;line-height:1.5}
+.upload-box,.section-box{margin-top:18px;padding:16px;border-radius:14px;border:1px solid var(--line);background:var(--panel)}
+.upload-box input[type="file"]{width:100%;margin-top:8px}
+.list-box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
+.box-header{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.count-badge{background:#1f2937;border:1px solid #334155;color:#cbd5e1;padding:4px 8px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+.list{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px;min-height:54px;max-height:320px;overflow-y:auto}
+.list-item{padding:8px 0;border-bottom:1px solid #1f2937;line-height:1.45}
+.list-item:last-child{border-bottom:none}
+.ok{color:var(--green);font-weight:700}.warn{color:var(--orange);font-weight:700}.danger{color:var(--red);font-weight:700}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:#1f2937;color:#fff;cursor:pointer;font-weight:700}
+.btn.primary{background:var(--accent);border-color:transparent}
+.btn.ghost{background:#374151}
+.btn.danger{background:var(--red);border-color:transparent}
+.history-list details{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:10px}
+.history-list summary{cursor:pointer;font-weight:700}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.link-btn{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;background:#1f2937;border:1px solid var(--line);color:#fff;text-decoration:none}
+.row-actions{display:flex;gap:8px;align-items:center;margin-top:8px}
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
+.modal-backdrop.show{display:flex}
+.modal{width:min(720px,100%);background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
+.modal img{max-width:100%;max-height:70vh;display:block;margin:auto;border-radius:12px}
+.small{font-size:12px}
+@media (max-width:900px){
+  .app{grid-template-columns:1fr}.sidebar{border-right:none;border-bottom:1px solid var(--line)}
+  .menu{flex-direction:row;flex-wrap:wrap}.menu-btn{width:auto}
+  .home-grid,.pontozo-grid,.lefoglalo-grid,.two-col,.form-grid{grid-template-columns:1fr}
+}

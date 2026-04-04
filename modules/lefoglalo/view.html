@@ -1,0 +1,114 @@
+<div class="module-card">
+  <h2>Lefoglaló</h2>
+  <p class="muted">Itt jelennek meg a lefoglalt autók szerkeszthető adatokkal, valamint a + kiváltás csekkek és a kiváltás lista.</p>
+
+  <div class="section-box">
+  <h3>Kiváltás csekk segéd</h3>
+  <p class="muted">Indok + kiváltás szöveg gyors összeállítása és másolása.</p>
+
+  <div class="form-grid">
+    <div>
+      <label class="muted small" for="kivaltasReasonSelect">Indok</label>
+      <select id="kivaltasReasonSelect" class="text-input">
+        <option value="ÉFEH">ÉFEH</option>
+        <option value="LFEH">LFEH</option>
+        <option value="TP">TP</option>
+        <option value="FEH">FEH</option>
+        <option value="Egyéb">Egyéb</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="muted small" for="kivaltasVehicleId">Jármű ID</label>
+      <input id="kivaltasVehicleId" class="text-input" type="text" placeholder="pl. 314937" />
+    </div>
+
+    <div style="grid-column:1/-1" id="kivaltasCustomReasonWrap" hidden>
+      <label class="muted small" for="kivaltasCustomReason">Egyedi indok</label>
+      <input id="kivaltasCustomReason" class="text-input" type="text" placeholder="pl. RUM" />
+    </div>
+  </div>
+
+  <div class="section-box" style="margin-top:12px;">
+    <div class="muted small">Kimenet</div>
+    <div id="kivaltasOutput" style="margin-top:8px; font-weight:700; font-size:18px;">
+      ÉFEH + kiváltás [JárműID]
+    </div>
+
+    <div class="toolbar">
+      <button class="btn primary" id="copyKivaltasOutput">Másolás</button>
+      <button class="btn ghost" id="fillFromEditVehicle">Aktuális szerkesztett ID</button>
+    </div>
+  </div>
+</div>
+  
+  <div class="home-grid">
+    <div class="stat-card">
+      <div class="stat-title">Lefoglalt autók</div>
+      <div class="stat-main" id="lefoglaloLefCount">0</div>
+      <div class="stat-sub">
+        Kiváltás logok: <span id="lefoglaloKivCount">0</span><br>
+        + kiváltás csekkek: <span id="lefoglaloTicketCount">0</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="lefoglalo-grid">
+    <div class="list-box">
+      <div class="box-header">
+        <h3>Lefoglalt autók</h3>
+        <span class="count-badge" id="countSeized">0 db</span>
+      </div>
+      <div class="list" id="listSeized">Nincs adat.</div>
+    </div>
+
+    <div class="list-box">
+      <div class="box-header">
+        <h3>Kiváltások</h3>
+        <span class="count-badge" id="countReleased">0 db</span>
+      </div>
+      <div class="list" id="listReleased">Nincs adat.</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="editModal">
+  <div class="modal">
+    <h3>Lefoglalás szerkesztése</h3>
+    <div class="form-grid">
+      <div>
+        <label class="muted small">ID</label>
+        <input class="text-input" id="modalVehicleId" disabled />
+      </div>
+      <div>
+        <label class="muted small">Rendszám</label>
+        <input class="text-input" id="modalVehiclePlate" disabled />
+      </div>
+      <div style="grid-column:1/-1">
+        <label class="muted small">Indok</label>
+        <input class="text-input" id="modalReason" placeholder="Írd be az indokot" />
+      </div>
+      <div style="grid-column:1/-1">
+        <label class="muted small">Kép link</label>
+        <input class="text-input" id="modalImageUrl" placeholder="https://..." />
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <button class="btn primary" id="modalSaveBtn">Mentés</button>
+      <button class="btn ghost" id="modalPreviewBtn">Előnézet</button>
+      <button class="btn danger" id="modalCancelBtn">Bezárás</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="imageModal">
+  <div class="modal">
+    <h3>Kép előnézet</h3>
+    <div id="imageModalBody" class="muted"></div>
+    <div class="toolbar">
+      <button class="btn danger" id="imageModalCloseBtn">Bezárás</button>
+    </div>
+  </div>
+</div>

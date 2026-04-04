@@ -1,0 +1,71 @@
+<div class="module-card">
+  <h2>Pontozó</h2>
+  <p class="muted">A főoldalon betöltött logok alapján dolgozik. Csak a normál csekkeket listázza és számolja pontnak. A + kiváltás csekkek nem jelennek meg itt.</p>
+
+  <div class="toolbar">
+    <button class="btn primary" id="btnSaveWeek">Hét mentése</button>
+    <button class="btn danger" id="btnResetCurrent">Aktuális hét nullázása</button>
+    <button class="btn ghost" id="btnClearHistory">Előző hetek törlése</button>
+  </div>
+
+  <div class="home-grid">
+    <div class="stat-card">
+      <div class="stat-title">Pontozás összesítés</div>
+      <div class="stat-main" id="pontozoTotalPoints">0</div>
+      <div class="stat-sub">
+        Normál csekk pont: <span id="pontozoTicketPoints">0</span><br>
+        Traffipax pont: <span id="pontozoTraffiPoints">0</span><br>
+        Lefoglalás pont: <span id="pontozoLefPoints">0</span><br>
+        Kiváltás pont: <span id="pontozoKivPoints">0</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-title">Traffipax összeg</div>
+      <div class="stat-main" id="pontozoTraffiSum">0$</div>
+      <div class="stat-sub">
+        Normál csekk db: <span id="pontozoTicketCount">0</span><br>
+        Traffipax db: <span id="pontozoTraffiCount">0</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pontozo-grid">
+    <div class="list-box">
+      <div class="box-header">
+        <h3>Normál csekkek</h3>
+        <span class="count-badge" id="countTicket">0 db</span>
+      </div>
+      <div class="list" id="listTicket">Nincs adat.</div>
+    </div>
+
+    <div class="list-box">
+      <div class="box-header">
+        <h3>Traffipax események</h3>
+        <span class="count-badge" id="countTraffi">0 db</span>
+      </div>
+      <div class="list" id="listTraffi">Nincs adat.</div>
+    </div>
+
+    <div class="list-box">
+      <div class="box-header">
+        <h3>Lefoglalás</h3>
+        <span class="count-badge" id="countLef">0 db</span>
+      </div>
+      <div class="list" id="listLef">Nincs adat.</div>
+    </div>
+
+    <div class="list-box">
+      <div class="box-header">
+        <h3>Kiváltás</h3>
+        <span class="count-badge" id="countKiv">0 db</span>
+      </div>
+      <div class="list" id="listKiv">Nincs adat.</div>
+    </div>
+  </div>
+
+  <div class="section-box">
+    <h3>Előző hetek</h3>
+    <div id="historyList" class="history-list"></div>
+  </div>
+</div>

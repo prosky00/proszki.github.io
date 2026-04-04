@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Multi Tool</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar-top"><h2>Multi Tool</h2></div>
+      <nav class="menu">
+        <button class="menu-btn active" data-view="home" type="button">Főoldal</button>
+        <button class="menu-btn" data-view="pontozo" type="button">Pontozó</button>
+        <button class="menu-btn" data-view="lefoglalo" type="button">Lefoglaló</button>
+        <button class="menu-btn" data-view="szamlalok" type="button">Számlálók</button>
+        <button class="menu-btn" data-view="extrak" type="button">Extrák</button>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="name-box">
+          <label for="playerName">Név</label>
+          <input id="playerName" type="text" placeholder="Írd be a neved" />
+        </div>
+      </header>
+      <section id="content" class="content">Betöltés...</section>
+    </main>
+  </div>
+
+  <script src="assets/js/storage.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/parser.js" defer></script>
+  <script src="assets/js/stats.js" defer></script>
+  <script src="assets/js/router.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<div class="module-card">
+  <h1>Helló</h1>
+  <div class="name-preview" data-player-name>Nincs megadva</div>
+
+  <div class="upload-box">
+    <h3>Log fájlok betöltése</h3>
+    <p class="muted">A logokat itt töltsd be, a többi modul ebből fog dolgozni.</p>
+    <input id="homeLogInput" type="file" accept=".log,.txt" multiple />
+  </div>
+
+  <div class="home-grid">
+    <div class="stat-card">
+      <div class="stat-title">Pontozó összesítés</div>
+      <div class="stat-main" id="homeTotalPoints">0</div>
+      <div class="stat-sub">
+        Normál csekkek: <span id="homeTicketCount">0</span><br>
+        Traffipax: <span id="homeTraffiCount">0</span><br>
+        Lefoglalás: <span id="homeLefCount">0</span><br>
+        Kiváltás: <span id="homeKivCount">0</span>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-title">Lefoglaló összesítés</div>
+      <div class="stat-main" id="homeKivaltasTicketCount">0</div>
+      <div class="stat-sub">
+        + kiváltás csekkek<br>
+        Traffipax összeg: <span id="homeTraffiSum">0$</span>
+      </div>
+    </div>
+  </div>
+</div>
