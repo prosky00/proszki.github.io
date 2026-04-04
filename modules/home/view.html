@@ -8,25 +8,43 @@
     <input id="homeLogInput" type="file" accept=".log,.txt" multiple />
   </div>
 
-  <div class="home-grid">
+  <div class="home-top-grid">
     <div class="stat-card">
-      <div class="stat-title">Pontozó összesítés</div>
+      <div class="stat-title">Összesítő</div>
       <div class="stat-main" id="homeTotalPoints">0</div>
+
       <div class="stat-sub">
-        Normál csekkek: <span id="homeTicketCount">0</span><br>
-        Traffipax: <span id="homeTraffiCount">0</span><br>
-        Lefoglalás: <span id="homeLefCount">0</span><br>
-        Kiváltás: <span id="homeKivCount">0</span>
+        Normál csekk: <b id="homeTicketCount">0</b> db / <b id="homeTicketPoints">0</b> pont<br>
+        Traffipax: <b id="homeTraffiCount">0</b> db / <b id="homeTraffiPoints">0</b> pont<br>
+        Lefoglalás: <b id="homeLefCount">0</b> db / <b id="homeLefPoints">0</b> pont<br>
+        Kiváltás: <b id="homeKivCount">0</b> db / <b id="homeKivPoints">0</b> pont<br>
+        Traffipax összeg: <b id="homeTraffiSum">0</b> $<br>
+        + kiváltás csekk: <b id="homeKivaltasTicketCount">0</b> db
       </div>
     </div>
 
-    <div class="stat-card">
-      <div class="stat-title">Lefoglaló összesítés</div>
-      <div class="stat-main" id="homeKivaltasTicketCount">0</div>
-      <div class="stat-sub">
-        + kiváltás csekkek<br>
-        Traffipax összeg: <span id="homeTraffiSum">0$</span>
+    <div class="stat-card chart-card">
+      <div class="stat-title">Pontok megoszlása</div>
+      <div class="chart-wrap">
+        <canvas id="homePointsChart"></canvas>
+      </div>
+      <div id="homeChartEmpty" class="muted chart-empty" style="display:none;">
+        Nincs még pontozható adat.
       </div>
     </div>
+  </div>
+
+  <div class="section-box">
+    <div class="box-header">
+      <h3>Részletes lista</h3>
+      <div class="toolbar" style="margin-top:0;">
+        <button class="btn ghost active-home-filter" data-home-filter="ticket" type="button">Csekk</button>
+        <button class="btn ghost" data-home-filter="traffi" type="button">Traffi</button>
+        <button class="btn ghost" data-home-filter="kivaltas" type="button">Kiváltás</button>
+        <button class="btn ghost" data-home-filter="lefoglalas" type="button">Lefoglalás</button>
+      </div>
+    </div>
+
+    <div class="list home-detail-list" id="homeDetailList">Nincs adat.</div>
   </div>
 </div>
